@@ -1,0 +1,129 @@
+<div id="anamnesis_settings">
+    <div class="inline-drawer">
+        <div class="inline-drawer-toggle inline-drawer-header">
+            <div class="flex-container alignitemscenter margin0">
+                <b>Anamnesis Memory</b>
+            </div>
+            <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+        </div>
+        <div class="inline-drawer-content">
+            <!-- Status indicator -->
+            <div id="anamnesis_status_bar" class="anamnesis-status">
+                <span id="anamnesis_status_dot" class="anamnesis-dot offline"></span>
+                <span id="anamnesis_status_text">Checking...</span>
+                <span id="anamnesis_memory_count" class="anamnesis-count"></span>
+            </div>
+
+            <!-- Enable toggle -->
+            <label class="checkbox_label" for="anamnesis_enabled">
+                <input id="anamnesis_enabled" type="checkbox" />
+                <span>Enable memory injection</span>
+            </label>
+
+            <!-- Auto-remember toggle -->
+            <label class="checkbox_label" for="anamnesis_auto_remember">
+                <input id="anamnesis_auto_remember" type="checkbox" />
+                <span>Auto-remember messages</span>
+            </label>
+
+            <hr />
+
+            <!-- Recall settings -->
+            <label for="anamnesis_recall_limit">Memories to recall: <span id="anamnesis_recall_limit_value">5</span></label>
+            <input id="anamnesis_recall_limit" type="range" min="1" max="20" step="1" value="5" />
+
+            <label for="anamnesis_emotion_weight">Emotion weight: <span id="anamnesis_emotion_weight_value">0.3</span></label>
+            <input id="anamnesis_emotion_weight" type="range" min="0" max="1" step="0.1" value="0.3" />
+
+            <label for="anamnesis_depth">Injection depth: <span id="anamnesis_depth_value">2</span></label>
+            <input id="anamnesis_depth" type="range" min="0" max="100" step="1" value="2" />
+
+            <label for="anamnesis_position">Injection position:</label>
+            <select id="anamnesis_position" class="text_pole">
+                <option value="0">In prompt (system)</option>
+                <option value="1">In chat (at depth)</option>
+            </select>
+
+            <label for="anamnesis_role">Message role:</label>
+            <select id="anamnesis_role" class="text_pole">
+                <option value="0">System</option>
+                <option value="1">User</option>
+                <option value="2">Assistant</option>
+            </select>
+
+            <hr />
+
+            <!-- Template -->
+            <label for="anamnesis_template">Injection template:</label>
+            <textarea id="anamnesis_template" class="text_pole textarea_compact" rows="3" placeholder="[Anamnesis Memory: {{memories}}]"></textarea>
+
+            <hr />
+
+            <!-- Manual controls -->
+            <div class="flex-container">
+                <div id="anamnesis_test_recall" class="menu_button menu_button_icon">
+                    <i class="fa-solid fa-brain"></i>
+                    <span>Test Recall</span>
+                </div>
+                <div id="anamnesis_view_stats" class="menu_button menu_button_icon">
+                    <i class="fa-solid fa-chart-bar"></i>
+                    <span>Stats</span>
+                </div>
+            </div>
+
+            <!-- Manual remember -->
+            <label for="anamnesis_manual_content">Store a memory:</label>
+            <textarea id="anamnesis_manual_content" class="text_pole textarea_compact" rows="2" placeholder="Enter memory content..."></textarea>
+            <div class="flex-container">
+                <select id="anamnesis_manual_category" class="text_pole">
+                    <option value="conversation">Conversation</option>
+                    <option value="collaboration">Collaboration</option>
+                    <option value="insight">Insight</option>
+                    <option value="milestone">Milestone</option>
+                    <option value="learning">Learning</option>
+                    <option value="emotional">Emotional</option>
+                    <option value="technical">Technical</option>
+                    <option value="relationship">Relationship</option>
+                    <option value="project">Project</option>
+                </select>
+                <div id="anamnesis_manual_save" class="menu_button menu_button_icon">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    <span>Save</span>
+                </div>
+            </div>
+
+            <hr />
+
+            <!-- MCP Configuration -->
+            <div id="anamnesis_config_toggle" class="menu_button menu_button_icon">
+                <i class="fa-solid fa-cog"></i>
+                <span>Server Config</span>
+            </div>
+            <div id="anamnesis_config_panel" style="display:none;">
+                <label for="anamnesis_mode">Mode:</label>
+                <select id="anamnesis_mode" class="text_pole">
+                    <option value="local">Local (JSON store)</option>
+                    <option value="mcp">MCP Server (Synapse)</option>
+                </select>
+                <div id="anamnesis_mcp_fields" style="display:none;">
+                    <label for="anamnesis_python">Python executable:</label>
+                    <input id="anamnesis_python" type="text" class="text_pole" value="python3" />
+                    <label for="anamnesis_server_script">Path to anamnesis_5_mcp_server.py:</label>
+                    <input id="anamnesis_server_script" type="text" class="text_pole" placeholder="/path/to/anamnesis_5_mcp_server.py" />
+                    <label for="anamnesis_entity_name">Entity name:</label>
+                    <input id="anamnesis_entity_name" type="text" class="text_pole" value="SillyTavern" />
+                </div>
+                <div id="anamnesis_save_config" class="menu_button menu_button_icon">
+                    <i class="fa-solid fa-save"></i>
+                    <span>Save Config</span>
+                </div>
+            </div>
+
+            <!-- Recall preview -->
+            <div id="anamnesis_preview" style="display:none;">
+                <label>Last recall results:</label>
+                <textarea id="anamnesis_preview_content" class="text_pole textarea_compact" rows="6" readonly></textarea>
+            </div>
+        </div>
+    </div>
+</div>

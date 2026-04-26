@@ -1,0 +1,7 @@
+{
+    "name": "sillytavern-anamnesis",
+    "version": "1.0.0",
+    "description": "Anamnesis 5.0 Memory Bridge for SillyTavern",
+    "main": "index.js",
+    "type": "commonjs"
+}

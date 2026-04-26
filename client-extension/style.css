@@ -1,0 +1,62 @@
+/* Anamnesis Memory Extension */
+
+.anamnesis-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 8px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    background: var(--SmartThemeBlurTintColor, rgba(0,0,0,0.2));
+    font-size: 0.85em;
+}
+
+.anamnesis-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.anamnesis-dot.online {
+    background: #4caf50;
+    box-shadow: 0 0 4px #4caf50;
+}
+
+.anamnesis-dot.offline {
+    background: #ff9800;
+    box-shadow: 0 0 4px #ff9800;
+}
+
+.anamnesis-dot.error {
+    background: #f44336;
+    box-shadow: 0 0 4px #f44336;
+}
+
+.anamnesis-count {
+    margin-left: auto;
+    opacity: 0.7;
+    font-size: 0.9em;
+}
+
+#anamnesis_settings hr {
+    border: none;
+    border-top: 1px solid var(--SmartThemeBorderColor, rgba(255,255,255,0.1));
+    margin: 8px 0;
+}
+
+#anamnesis_config_panel {
+    padding: 8px;
+    margin-top: 4px;
+    border-radius: 4px;
+    background: var(--SmartThemeBlurTintColor, rgba(0,0,0,0.15));
+}
+
+#anamnesis_preview {
+    margin-top: 8px;
+}
+
+#anamnesis_preview_content {
+    font-size: 0.85em;
+    opacity: 0.9;
+}
